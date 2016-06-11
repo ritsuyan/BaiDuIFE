@@ -1,0 +1,50 @@
+   /*               public           css         */
+  *{
+  	  margin: 0;
+  	  padding: 0;
+      text-decoration: none;
+      font-family: "微软雅黑";
+      
+   
+  	    }
+
+
+
+#table{
+	 width: 420px;
+	 height: 420px;
+	 position: absolute;
+	 left: 0;
+	 top: 0;
+	 right: 0;
+	 bottom: 0;
+	 margin: auto;
+	 
+}
+#table .grid{
+	 width: 40px;
+	 height: 40px;
+	 float: left;
+	 border: 1px solid #cccccc;
+}
+.grid:nth-child(2n){
+	 border-left: none !important;
+	 border-right: none !important;
+}
+.gird:nth-child(n-1){
+	 	 border-top: none !important;
+	 border-bottom: none !important;
+}
+
+.curb{
+	 background: url('../imgs/curb.jpg') center center no-repeat;
+}
+
+
+.control{
+	 position: absolute;
+	 bottom: 10%;
+	 left: 45%;
+}
+
+
