@@ -32,7 +32,22 @@
      	   <input type="text" id="textIn" />
 
      	   <script type="text/javascript">
-     	   	    setTimeout(console.log($('$textIn').text()),500);
+			   var obj = {};
+			   obj.title = 'q1';
+			   var $box_sig = $(
+					   '<div>' +
+					   obj.title + '<input type="text" value="单选题" onclick="this.select()" />' +
+			   '<span class="opt">选项一</span>' +
+			   '<span class="opt>选项二</span>' +
+			   '<div class="cre_opt">+</div>' +
+			   '<div class="opt_move">' +
+				   // TODO add by type
+			   '<span>复用</span>' +
+			   '<span>删除</span>' +
+			   '</div>' +
+			   '</div>'
+			   );
+			   $('body').append($box_sig)
      	   </script>
 </body>
 

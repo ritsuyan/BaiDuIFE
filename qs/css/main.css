@@ -47,7 +47,7 @@
 
  .wrap{
  	   background: #eeeeee;
- 	   height: 650px;
+ 	   height: 700px; //650px
  	  
  	  
 
@@ -59,7 +59,7 @@
  	  background: #ffffff;
  	  
       width: 1022px;
-      height: 324px;
+      height: 324px; /*324*/
       position: absolute;
       left: 0;
       top: 0;
@@ -68,6 +68,8 @@
       margin: auto;
 
       border-radius: 5px;
+      padding-bottom: 220px;
+      margin-top: 100px;
  }
 
 
@@ -107,4 +109,219 @@
       font-size: 20px;
       text-align: right;
  }
- 
+
+ /*    edit         page            css   */
+
+ .new_con{
+ 	  margin-top: 18px;
+ 	  margin-left: 30px;
+
+
+
+ } 
+
+ .con{ 
+ 		border-bottom: 2px solid #cccccc;
+ 		margin-left: 16px;
+    margin-right: 30px;
+
+  }
+  .con input[type=text] {
+
+  	 width: 915px;
+  	 height: 58px;
+  	 color: black;
+  	 margin-bottom: 19px;
+  	 font-size: 20px;
+  	 text-align: center;
+  	 line-height: 58px;
+      margin-left: 16px;
+      border: none;
+
+  }
+  .con input[type=text]:hover{
+  	  background: #FEF2EA;
+  }
+  .con2{
+  	 margin-top: 30px;
+  	 padding-bottom: 30px;
+     margin-bottom: 30px;
+  }
+
+  .add_qs{
+  	 margin-left: 16px;
+  	 background: #eeeeee;
+  	  width: 915px;
+  	  height: 80px;
+  	  color: #888888;
+  	  text-align: center;
+  	  line-height: 80px;
+
+
+  }
+
+ .con3 span{
+      color: #888;
+      font-weight: normal;
+ }
+
+
+ .con3 span:first-child{
+    margin-top: 42px;
+    margin-left: 142px;
+ }
+
+
+  #calendar{
+
+    height: 32px;
+    width: 190px;
+    margin-right: 162px;
+    
+
+  }
+
+  .btn{
+  	  width: 96px;
+  	  height: 28px;
+  	  display: inline-block;
+  	  text-align: center;
+  	  line-height: 28px;
+  	   color: #B9B9B9;
+  	  box-shadow: 0 .05em .25em rgba(0,0,0,.5);
+      border-radius: 3px;
+      border: 1px solid #888;
+      font-weight: normal; 
+
+
+ }
+
+
+ .sav_btn{
+     margin-right: 20px;
+ }
+
+
+ .ty_wp {
+     border:1px solid #cccccc;
+    width: 913px;
+     height: 78px;
+     margin-left: 16px;
+     line-height: 78px;
+
+     display: none;
+
+
+ }
+ .qs_type{
+
+     border:1px solid #cccccc;
+     color: #888888;
+     margin-right: 28px;
+     width: 100px;
+     height: 35px;
+     display: inline-block !important;
+     line-height: 35px;
+     text-align: center;
+     background: #eeeeee;
+     box-shadow: 1px 1px #cccccc;
+     border-radius: 3px;
+ }
+ .qs_type:first-child{
+     margin-left: 270px !important;
+ }
+
+ .qs_type:hover{
+      background: #EE7419 ;
+     color: white;
+ }
+
+ .new_wrp{
+      /*height: 300px;*/
+ }
+
+ .new_qs{
+       width: 898px;
+      height: 138px; //
+      padding-left: 20px;
+    /* padding-top: 18px;*/
+      color: black;
+     position: relative;
+
+ }
+ .new_qs:hover{
+     background: #FEF2EA;
+ }
+
+
+ .new_qs input[type=text]{
+       width: 797px;
+       height: 24px;
+     text-align: left;
+     font-weight: normal;
+     font-size: 16px;
+     padding: 0 !important;
+
+
+ }
+ .new_qs input[type=text]:hover{
+     background: #FEF2EA;
+ }
+ .new_qs .opt{
+     display: block;
+     color: black;
+     font-weight: normal;
+
+ }
+
+ .opt,.cre_opt,.opt_move{
+        height: 14px;
+        position: absolute;
+
+ }
+ .cre_opt{
+      width: 802px;
+     height: 22px;
+     margin-left: 76px;
+     text-align: center;
+     line-height: 22px;
+     margin-top: 22px;
+
+ }
+ .cre_opt:hover{
+      border: 1px dashed #cccccc;
+     color: #cccccc;
+ }
+ .opt{
+     left: 8%;
+     bottom: 74%;
+ }
+
+ #opt2{
+      bottom: 56%;
+ }
+ .opt_move{
+     left: 90%;
+     top: 66%;
+ }
+ .opt_move span{
+     font-weight: normal;
+     color: black !important;
+     display: inline-block;
+     margin-right: 10px;
+ }
+ .opt:nth-child(n+2){
+      margin-bottom: 10px;
+
+ }
+
+
+ .qs_before{
+    margin-left: 270px;
+ }
+
+
+ .sld_div > div{
+       float: left;
+ }
+
