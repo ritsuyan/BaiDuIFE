@@ -8,7 +8,9 @@
       font-weight: bold;
    
   	    }
-
+ body{
+     background: #eeeeee;
+ }
 
  header{
  	  background: #EE7419;
@@ -42,18 +44,6 @@
  	  margin-right: 68px;
  }
 
-
-
-
- .wrap{
- 	   background: #eeeeee;
- 	   height: 700px; //650px
- 	  
- 	  
-
- 	
- }
-
 .con_bg{
  	  box-shadow: 3px 5px #dfdfdf;
  	  background: #ffffff;
@@ -66,7 +56,6 @@
       bottom: 20%;
       right: 0;
       margin: auto;
-
       border-radius: 5px;
       padding-bottom: 220px;
       margin-top: 100px;
@@ -115,9 +104,6 @@
  .new_con{
  	  margin-top: 18px;
  	  margin-left: 30px;
-
-
-
  } 
 
  .con{ 
@@ -241,12 +227,15 @@
  }
 
  .new_qs{
-       width: 898px;
+       width: 916px;
       height: 138px; //
-      padding-left: 20px;
+      padding-right: 20px;
+     padding-bottom: 30px;
     /* padding-top: 18px;*/
       color: black;
      position: relative;
+     margin-left: 16px;
+     margin-bottom: 50px;
 
  }
  .new_qs:hover{
@@ -274,35 +263,28 @@
 
  }
 
- .opt,.cre_opt,.opt_move{
+ .opt{
         height: 14px;
-        position: absolute;
+        margin-left: 30px;
+
 
  }
  .cre_opt{
       width: 802px;
      height: 22px;
-     margin-left: 76px;
+     margin-left: 22px;
      text-align: center;
      line-height: 22px;
-     margin-top: 22px;
 
  }
  .cre_opt:hover{
       border: 1px dashed #cccccc;
      color: #cccccc;
  }
- .opt{
-     left: 8%;
-     bottom: 74%;
- }
 
- #opt2{
-      bottom: 56%;
- }
  .opt_move{
-     left: 90%;
-     top: 66%;
+      float: right;
+
  }
  .opt_move span{
      font-weight: normal;

@@ -141,13 +141,15 @@ function add_box(obj,$box){
     //$box.insertBefore($('.new_wrp'))
 
     $('.new_wrp').append($box)
-    $('.con_bg').css('height','+=138px')
+    $('.con_bg').css('height','+=220px')
+    console.log($('.con_bg').css('height'))
+    console.log('new con'+ $('.new_con').css('height'))
 
     $('.ty_wp').css('display','none')
    // $(".ty_").css('margin-top','+=100px')
-    itemDetail($box)
+    //itemDetail($box)
 
-    $(".new_qs input[type=text]").on('keydown',function (e) {
+    $(".new_qs  input[type=text]").on('keydown',function (e) {
         console.log(e.target)
         if (e.keyCode == 13) {
             console.log(e.keyCode)
@@ -155,17 +157,24 @@ function add_box(obj,$box){
         }
     })
 
+    $('.opt').on('click',transInt(event))
+
     $('.cre_opt').on('click', function (e) {
         /*
         *    only one fun to create the item
         *
         * */
-      var opt_len =  $('.new_qs').children($('.opt')).length ; //5
-        console.log(opt_len)
-      var $c_s = $('<span class="opt">○ 选项'+(opt_len-2)+'</span>');
-        console.log($c_s)
-      $c_s.insertBefore($('.cre_opt'))
-      $c_s.css('top',opt_len*11+"%")
+
+        var  $curr_qs = $(e.target).parent(),
+             opt_len = $curr_qs.children($('.opt')).length,
+             $c_s = $('<span class="opt">○ 选项'+(opt_len-2)+'</span>'),
+             $cre_opt = $curr_qs.children('.cre_opt');
+        $curr_qs.css('height','+=25px')
+        $('.con_bg').css('height','+=30px')
+        console.log($('.con_bg').css('height'))
+        $('.con_bg').css('margin-bottom','+=30px')
+        $c_s.insertBefore($cre_opt)
+        //$c_s.css('top',opt_len*11+"%")
     })
 
 
@@ -174,20 +183,20 @@ function add_box(obj,$box){
 
 function itemDetail($box){
    var curr_box =$box[0];
-    var $boxparent = $box.parent();
-     console.log(curr_box)
+    var $boxchildren= $box.children('.opt_move');
+
+
     if(curr_box.previousElementSibling !== null){
-        alert(1)
-        add_item_opt('pre',$boxparent)
+        add_item_opt('pre',$boxchildren)
     }
     if(curr_box.nextElementSibling !== null){
-         add_item_opt('nex',$boxparent)
+         add_item_opt('nex',$boxchildren)
     }
 
 }
 
 function add_item_opt(opt,par){
-    var tex ;
+    var tex,count=0;
     if(opt === 'pre'){
         tex = '上移'
     }
@@ -197,13 +206,45 @@ function add_item_opt(opt,par){
     var ist = $(
         '<span>'+tex+'</span>'
     );
-    console.log(ist)
-    par.append(ist)
+
+    var arr = par.children(),
+        $arr = arr[0],
+        $ist = ist[0];
+
+
+    if($arr.indexOf($ist) < 0){
+        par.append(ist)
+    }
+
+
+
   //  ist.insertBefore($('.opt_move:first-child'))
     // parent class opt_move
 
 }
 
+
+function interCheck(){
+
+      var $new_arr = document.querySelectorAll('.new_qs'),
+          len = $new_arr.length;
+      for(var i = 0; i < len; i++){
+          var $curr = $new_arr[i],
+              $curr_j = $($curr);
+          if($curr.nextElementSibling !== null){
+           var  $opt_move = $curr_j.children('.opt_move');
+               add_item_opt('nex',$opt_move)
+          }
+      }
+}
+
+
+function transInt(event){
+       var $span = event.target,
+           $span_text = $span.text(),
+           $input = $('<input type="text" value="+$span_text+" onclick="this.select()" />');
+           $span.replaceWith($input);
+}
 function initCan() {
     var $calendar = $(
         '<div id="calendarIn">' +
