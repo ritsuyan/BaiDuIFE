@@ -31,15 +31,20 @@ var $html = $(
 
 
             '<div class="con3">' +
-            '<span>问卷截止日期 &nbsp <input type="text"  id="calendar" /> </span>' +
+            '<span>问卷截止日期 &nbsp <input type="text"  id="calendar" />' + '</span>' +
             '<span class="btn sav_btn" >保存问卷</span>' +
             '<span class="btn rel_btn">发布问卷</span>' +
             '</div>' +
             '</div>'
         );
         $('.con_bg').empty().append($html)
+        document.getElementById('calendar').onclick = function(){
+            laydate({
+                elem: '#calendar'
+            });
+        }
 
-        $("input[type=text]").on('keydown', function (e) {
+       $("input[type=text]").on('keydown', function (e) {
             console.log(e.target)
             if (e.keyCode == 13) {
                 console.log(e.keyCode)
@@ -53,7 +58,6 @@ var $html = $(
             /*
              *  when add qs,it just one fun which toggle the qs type,
              * */
-
             console.log(e.target)
             $('.ty_wp').slideToggle('1000')
         })
@@ -67,9 +71,7 @@ var $html = $(
             qsTyBox($ty)
         })
 
-        $('.opt').on('click', function (e) {
-
-        })
+    
     });
 
 }
@@ -157,14 +159,39 @@ function add_box(obj,$box){
         }
     })
 
-    $('.opt').on('click',transInt(event))
+    $('.new_qs').on('mousemove',function (e) {
+        var $curr_qs = $(e.target);
+           $curr_qs.children('input[type=text]').css('background','#FEF2EA')
+    })
+     $('.new_qs').on('mouseout',function (e) {
+        var $curr_qs = $(e.target);
+           $curr_qs.children('input[type=text]').css('background','#ffffff')
+    })
+
+
+    $('.opt').on('click',function (e) {
+            var $span = $(e.target),
+           $span_text = $span.text().trim().slice(2,5),
+           $input = $('<input type="text" value="'+$span_text+'" onclick="this.select()" />');
+           $span.replaceWith($input);
+        
+        $input.on('keydown',function (e) {
+            var $curr_it = $(e.target),
+                $curr_tex = $curr_it.val(); 
+                console.log('tex'+ $curr_tex)
+        if (e.keyCode == 13) {
+            console.log(e.keyCode)
+            $(this).blur();
+            $curr_it.replaceWith('<span class="opt">○  '+$curr_tex+'</span>')
+        }
+        })
+    })
 
     $('.cre_opt').on('click', function (e) {
         /*
         *    only one fun to create the item
         *
         * */
-
         var  $curr_qs = $(e.target).parent(),
              opt_len = $curr_qs.children($('.opt')).length,
              $c_s = $('<span class="opt">○ 选项'+(opt_len-2)+'</span>'),
@@ -239,12 +266,7 @@ function interCheck(){
 }
 
 
-function transInt(event){
-       var $span = event.target,
-           $span_text = $span.text(),
-           $input = $('<input type="text" value="+$span_text+" onclick="this.select()" />');
-           $span.replaceWith($input);
-}
+
 function initCan() {
     var $calendar = $(
         '<div id="calendarIn">' +
@@ -275,3 +297,8 @@ function initCan() {
     $calendar.insertBefore($('#calendar'))
 
 }
+
+
+setInterval(console.log('calendar'+$('#calendar').text()),1000)
+
+
